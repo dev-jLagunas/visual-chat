@@ -33,7 +33,275 @@ $light-violet: hsl(264, 100%, 61%);
 /********************************************************
 --Global Styles--
 **********************************************************/
+body {
+  font-family: "Rubik", sans-serif;
+  background: $light-grayish-violet;
+  height: 100vh;
+  position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -190px;
+    left: -150px;
+    width: 100%;
+    height: 100%;
+    background-image: url("public/images/blob.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; // This ensures the pseudo-element is behind the content of the body
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    &::before {
+      left: -300px;
+      top: -50px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url("public/images/blob-desktop.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      bottom: -200px;
+      left: 500px;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    @media (min-width: 1440px) {
+      &::before {
+        height: 200%;
+        top: -700px;
+        left: -400px;
+      }
+    }
+  }
+}
 /********************************************************
 --Project Styles--
 **********************************************************/
+.chat-phone-wrapper {
+  background-color: $white;
+  padding: 10px;
+  border-radius: 30px;
+  width: 260px;
+  margin-inline: auto;
+  margin-top: 2rem;
+  height: 33rem;
+  box-shadow: 0px 9px 36px -6px rgba(0, 0, 0, 0.75);
+}
+
+.chat-header-wrapper {
+  background: linear-gradient(to left, $light-magenta, $light-violet);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5px 1rem 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: 20px;
+    width: 120px;
+    background-color: $white;
+    position: absolute;
+    top: -5px;
+    right: 58px;
+    border-bottom-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+  }
+}
+
+.chat-header-info-wrapper {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  gap: 0.5rem;
+}
+
+.chat-header-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.walker-name {
+  color: $white;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.walker-availability {
+  color: lightgrey;
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+.left-angle {
+  color: $white;
+  padding-left: 0.5rem;
+}
+
+.ellipsis {
+  color: $white;
+  padding-right: 0.5rem;
+  font-size: 10px;
+}
+
+.header-img {
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $white;
+}
+
+.chat-display-wrapper {
+  background: $light-grayish-violet;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 27rem;
+  padding: 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.text-walker {
+  width: 9rem;
+  background-color: rgb(240, 236, 236);
+  color: $moderate-violet;
+  padding: 5px 9px 5px 5px;
+  margin-block: 0.5rem;
+  border-radius: 10px;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+.text-customer {
+  background: $white;
+  font-size: 9px;
+  width: 9rem;
+  margin-block: 0.5rem;
+  margin-left: auto;
+  padding: 5px 9px 5px 5px;
+  border-radius: 7px;
+  color: rgb(84, 93, 102);
+  line-height: 12px;
+}
+
+.chat-text-customer {
+  margin-left: auto;
+  width: 9rem;
+}
+
+.chat-img-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-img {
+  height: 40px;
+  border-radius: 11px;
+}
+
+.chat-price-btn {
+  width: 10rem;
+  margin-bottom: 0.5rem;
+  padding-block: 12px;
+  background: linear-gradient(to right, $light-magenta, $light-violet);
+  border: 0;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: $white;
+  font-size: 10px;
+  position: relative;
+  text-align: start;
+  padding-left: 1.5rem;
+}
+
+.chat-price-btn i {
+  position: absolute;
+  left: 10px;
+  opacity: 0.5;
+}
+
+.chat-price-btn span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  margin-left: 1rem;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-message {
+  position: relative;
+  padding-block: 12px;
+  padding-left: 10px;
+  border-radius: 20px;
+  background: $white;
+  color: rgb(201, 196, 196);
+  margin-block: 5px;
+}
+
+.input-message i {
+  font-size: 1rem;
+  background-color: $very-dark-desaturated-violet;
+  color: white;
+  padding: 6px;
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+}
+
+.app-info-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-right: 2rem;
+    text-align: start;
+  }
+
+  @media (min-width: 1024px) {
+    width: 40%;
+    margin-right: 5rem;
+  }
+
+  @media (min-width: 1440px) {
+    width: 20%;
+    margin-right: 10rem;
+  }
+}
+
+.app-info-title {
+  font-size: 2rem;
+  color: $very-dark-desaturated-violet;
+  font-weight: 500;
+}
+
+.app-info-text {
+  color: rgb(155, 151, 151);
+  padding-inline: 1rem;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 0;
+  }
+}

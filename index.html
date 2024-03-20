@@ -22,66 +22,86 @@
     />
   </head>
   <body>
-    <main class="chat-phone-wrapper">
-      <div class="chat-header-wrapper">
-        <div class="chat-header-info-wrapper">
-          <i class="fa-solid fa-angle-left left-angle"></i>
-          <img src="public/images/avatar.jpg" alt="" class="header-img" />
-          <div class="chat-header-text-wrapper">
-            <p class="walker-name">Samuel Green</p>
-            <p class="walker-availability">Available to Work</p>
+    <div class="project-content-wrapper">
+      <main class="chat-phone-wrapper">
+        <div class="chat-header-wrapper">
+          <div class="chat-header-info-wrapper">
+            <i class="fa-solid fa-angle-left left-angle"></i>
+            <img src="public/images/avatar.jpg" alt="" class="header-img" />
+            <div class="chat-header-text-wrapper">
+              <p class="walker-name">Samuel Green</p>
+              <p class="walker-availability">Available to Work</p>
+            </div>
           </div>
+          <i class="fa-solid fa-ellipsis-vertical ellipsis"></i>
         </div>
-        <i class="fa-solid fa-ellipsis-vertical ellipsis"></i>
-      </div>
-      <section class="chat-display-wrapper">
-        <div class="chat-text-walker">
-          <p class="text-walker">
-            That sounds great. I'd be happy to discuss more.
-          </p>
-          <p class="text-walker">
-            Could you send over some pictures of your dog, please?
-          </p>
-        </div>
-        <div class="chat-text-customer">
-          <div class="chat-img-wrapper">
-            <img src="public/images/dog-image-1.jpg" alt="" class="chat-img" />
-            <img src="public/images/dog-image-2.jpg" alt="" class="chat-img" />
-            <img src="public/images/dog-image-3.jpg" alt="" class="chat-img" />
+        <section class="chat-display-wrapper">
+          <div class="chat-text-walker">
+            <p class="text-walker message" data-order="1">
+              That sounds great. I'd be happy to discuss more.
+            </p>
+            <p class="text-walker message" data-order="2">
+              Could you send over some pictures of your dog, please?
+            </p>
           </div>
-          <p class="text-customer">
-            Here are a few pictures. She's a happy girl!!!
+          <div class="chat-text-customer">
+            <div class="chat-img-wrapper">
+              <img
+                src="public/images/dog-image-1.jpg"
+                alt=""
+                class="chat-img message"
+                data-order="3"
+              />
+              <img
+                src="public/images/dog-image-2.jpg"
+                alt=""
+                class="chat-img message"
+                data-order="4"
+              />
+              <img
+                src="public/images/dog-image-3.jpg"
+                alt=""
+                class="chat-img message"
+                data-order="5"
+              />
+            </div>
+            <p class="text-customer message" data-order="6">
+              Here are a few pictures. She's a happy girl!!!
+            </p>
+            <p class="text-customer message" data-order="7">Can you make it?</p>
+          </div>
+          <div class="chat-text-walker">
+            <p class="text-walker message" data-order="8">
+              She looks so happy! The time we discussed works. How long shall I
+              take her out for?
+            </p>
+          </div>
+          <div class="chat-btns-wrapper">
+            <button class="chat-price-btn minute-walk message" data-order="9">
+              <i class="fa-regular fa-circle"></i>30 minute walk
+              <span>$29</span>
+            </button>
+            <button class="chat-price-btn message" data-order="10">
+              <i class="fa-regular fa-circle"></i>1 hour walk <span>$49</span>
+            </button>
+          </div>
+          <p class="input-message">
+            Type a message...<span
+              ><i class="fa-solid fa-angle-right"></i
+            ></span>
           </p>
-          <p class="text-customer">Can you make it?</p>
-        </div>
-        <div class="chat-text-walker">
-          <p class="text-walker">
-            She looks so happy! The time we discussed works. How long shall I
-            take her out for?
-          </p>
-        </div>
-        <div class="chat-btns-wrapper">
-          <button class="chat-price-btn minute-walk">
-            <i class="fa-regular fa-circle"></i>30 minute walk <span>$29</span>
-          </button>
-          <button class="chat-price-btn">
-            <i class="fa-regular fa-circle"></i>1 hour walk <span>$49</span>
-          </button>
-        </div>
-        <p class="input-message">
-          Type a message...<span><i class="fa-solid fa-angle-right"></i></span>
+        </section>
+      </main>
+      <section class="app-info-wrapper">
+        <h2 class="app-info-title">Simple Booking</h2>
+        <p class="app-info-text">
+          Stay in touch with our dog walkers through the chat interface. This
+          makes it easy to discuss arrangements and make bookings. Once the walk
+          has been completed you can rate your walker and book again all through
+          the chat.
         </p>
       </section>
-    </main>
-    <section class="app-info-wrapper">
-      <h2 class="app-info-title">Simple Booking</h2>
-      <p class="app-info-text">
-        Stay in touch with our dog walkers through the chat interface. This
-        makes it easy to discuss arrangements and make bookings. Once the walk
-        has been completed you can rate your walker and book again all through
-        the chat.
-      </p>
-    </section>
+    </div>
     <!-- Javascript -->
     <script type="module" src="/main.js"></script>
   </body>

@@ -37,8 +37,8 @@ body {
   font-family: "Rubik", sans-serif;
   background: $light-grayish-violet;
   height: 100vh;
-  position: relative;
 
+  /* Background SVG Design Styles 1 */
   &::before {
     content: "";
     position: absolute;
@@ -49,13 +49,27 @@ body {
     background-image: url("public/images/blob.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1; // This ensures the pseudo-element is behind the content of the body
+    z-index: -1;
   }
 
+  /* Background SVG Design Styles 2 */
   @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-image: url("public/images/blob-desktop.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      bottom: -200px;
+      left: 300px;
+      opacity: 0.2;
+      z-index: -1;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -65,31 +79,52 @@ body {
     }
 
     &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-image: url("public/images/blob-desktop.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      bottom: -200px;
       left: 500px;
-      opacity: 0.2;
-      z-index: -1;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &::before {
+      height: 200%;
+      top: -700px;
+      left: -400px;
     }
 
-    @media (min-width: 1440px) {
-      &::before {
-        height: 200%;
-        top: -700px;
-        left: -400px;
-      }
+    &::after {
+      left: 600px;
     }
   }
 }
+
 /********************************************************
 --Project Styles--
 **********************************************************/
+
+/* Wrapper Styles */
+
+.project-content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-block: 3rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 10rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 1024px) {
+    width: 75%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 50%;
+  }
+}
+
 .chat-phone-wrapper {
   background-color: $white;
   padding: 10px;
@@ -138,6 +173,46 @@ body {
   flex-direction: column;
 }
 
+.chat-display-wrapper {
+  background: $light-grayish-violet;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 27rem;
+  padding: 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.chat-img-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-info-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+
+  width: 90%;
+  margin-inline: auto;
+
+  @media (min-width: 425px) {
+    width: 70%;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 50%;
+  }
+}
+
 .walker-name {
   color: $white;
   font-weight: 600;
@@ -167,17 +242,6 @@ body {
   border: 1px solid $white;
 }
 
-.chat-display-wrapper {
-  background: $light-grayish-violet;
-  display: flex;
-  flex-direction: column;
-  font-size: 10px;
-  height: 27rem;
-  padding: 1rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 .text-walker {
   width: 9rem;
   background-color: rgb(240, 236, 236);
@@ -201,14 +265,23 @@ body {
   line-height: 12px;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.message {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
 .chat-text-customer {
   margin-left: auto;
   width: 9rem;
-}
-
-.chat-img-wrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 .chat-img {
@@ -267,26 +340,6 @@ body {
   position: absolute;
   right: 5px;
   bottom: 4px;
-}
-
-.app-info-wrapper {
-  text-align: center;
-  margin-top: 1rem;
-  @media (min-width: 768px) {
-    width: 50%;
-    margin-right: 2rem;
-    text-align: start;
-  }
-
-  @media (min-width: 1024px) {
-    width: 40%;
-    margin-right: 5rem;
-  }
-
-  @media (min-width: 1440px) {
-    width: 20%;
-    margin-right: 10rem;
-  }
 }
 
 .app-info-title {

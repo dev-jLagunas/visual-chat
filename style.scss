@@ -37,6 +37,7 @@ body {
   font-family: "Rubik", sans-serif;
   background: $light-grayish-violet;
   height: 100vh;
+  overflow: scroll;
 
   /* Background SVG Design Styles 1 */
   &::before {
@@ -54,6 +55,8 @@ body {
 
   /* Background SVG Design Styles 2 */
   @media (min-width: 768px) {
+    overflow: hidden;
+
     &::after {
       content: "";
       position: absolute;
@@ -114,14 +117,8 @@ body {
     flex-direction: row;
     margin-top: 10rem;
     margin-inline: auto;
-  }
-
-  @media (min-width: 1024px) {
-    width: 75%;
-  }
-
-  @media (min-width: 1440px) {
-    width: 50%;
+    width: clamp(50%, 75%, 100%);
+    max-width: 900px;
   }
 }
 
@@ -129,7 +126,7 @@ body {
   background-color: $white;
   padding: 10px;
   border-radius: 30px;
-  width: 260px;
+  width: 270px;
   margin-inline: auto;
   margin-top: 2rem;
   height: 33rem;
@@ -148,6 +145,7 @@ body {
   border-top-left-radius: 30px;
   position: relative;
 
+  /* Phone screen design style */
   &::before {
     content: "";
     height: 20px;
@@ -171,6 +169,7 @@ body {
 .chat-header-text-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 
 .chat-display-wrapper {
@@ -192,7 +191,6 @@ body {
 .app-info-wrapper {
   text-align: center;
   margin-top: 1rem;
-
   width: 90%;
   margin-inline: auto;
 
@@ -202,14 +200,7 @@ body {
 
   @media (min-width: 768px) {
     width: 50%;
-  }
-
-  @media (min-width: 1024px) {
-    width: 50%;
-  }
-
-  @media (min-width: 1440px) {
-    width: 50%;
+    text-align: start;
   }
 }
 
@@ -244,11 +235,12 @@ body {
 
 .text-walker {
   width: 9rem;
-  background-color: rgb(240, 236, 236);
+  background-color: rgb(236, 233, 233);
   color: $moderate-violet;
-  padding: 5px 9px 5px 5px;
+  padding: 5px 9px 5px 10px;
   margin-block: 0.5rem;
   border-radius: 10px;
+  border-bottom-left-radius: 0px;
   font-size: 9px;
   line-height: 12px;
 }
@@ -260,7 +252,8 @@ body {
   margin-block: 0.5rem;
   margin-left: auto;
   padding: 5px 9px 5px 5px;
-  border-radius: 7px;
+  border-radius: 8px;
+  border-bottom-right-radius: 0px;
   color: rgb(84, 93, 102);
   line-height: 12px;
 }
@@ -296,7 +289,7 @@ body {
   background: linear-gradient(to right, $light-magenta, $light-violet);
   border: 0;
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 2px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   color: $white;

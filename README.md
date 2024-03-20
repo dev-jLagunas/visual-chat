@@ -3,6 +3,10 @@
 This is a solution to the [Chat app CSS illustration challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY). This project focused on CSS to create a realistic and interactive chat application interface. The design heavily emphasizes the creation of complex shapes and animations to mimic the look and feel of a real-world iPhone screen.
 The display includes a phone shape complete with chat details, and a dynamic display that mimics text messages appearing on screen.
 
+## Live Site
+
+You can view the live site [Here](https://dev-jlagunas.github.io/visual-chat/)
+
 ## Table of contents
 
 - [Overview](#overview)
